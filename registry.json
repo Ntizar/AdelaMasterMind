@@ -2,7 +2,7 @@
   "meta": {
     "name": "Adela Ecosystem",
     "version": "1.1.0",
-    "updated": "2026-06-14",
+    "updated": "2026-06-15",
     "author": "David Antizar (Ntizar)",
     "description": "Registro central del ecosistema Adela — fuente de verdad para LLMs y herramientas"
   },
@@ -138,12 +138,37 @@
       "github": "https://github.com/Ntizar/Adela_i18n",
       "exports": ["createI18n", "t", "setLocale", "getLocale", "addMessages", "formatNumber", "formatDate", "formatCurrency"],
       "category": "presentation"
+    },
+    {
+      "id": "Adela_mailer",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Envío de emails transaccionales — abstraction sobre SMTP con plantillas HTML y fallback a console en desarrollo",
+      "tests": 25,
+      "runtimeDeps": ["nodemailer"],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_mailer",
+      "exports": ["createMailer", "renderPredefined", "predefinedTemplates", "bienvenida", "verificacion", "passwordReset", "notificacion", "factura"],
+      "category": "core"
+    },
+    {
+      "id": "Adela_api",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Helpers REST para APIs — paginación offset/cursor, filtering, sorting, field selection y response envelope estándar",
+      "tests": 53,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_api",
+      "exports": ["createApiHelpers", "paginate", "filter", "sort", "PaginationOptions", "PaginatedResult", "FilterOptions", "FilterCondition", "SortOptions", "SortOption", "ApiResponse", "ApiError"],
+      "category": "api-layer"
     }
   ],
   "categories": {
     "infra": "Capa base — sin dependencias de otros Adela",
     "core": "Capa funcional — depende de infra",
     "export": "Capa de exportación — depende de core + infra",
-    "presentation": "Capa de presentación — depende de core + infra"
+    "presentation": "Capa de presentación — depende de core + infra",
+    "api-layer": "Capa de API — helpers REST reutilizables"
   }
 }
