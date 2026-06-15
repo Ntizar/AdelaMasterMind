@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "name": "Adela Ecosystem",
+    "version": "1.0.0",
+    "updated": "2026-06-14",
+    "author": "David Antizar (Ntizar)",
+    "description": "Registro central del ecosistema Adela — fuente de verdad para LLMs y herramientas"
+  },
+  "modules": [
+    {
+      "id": "Adela_time",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Utilidades de fecha/hora en timezone Europe/Madrid",
+      "tests": 46,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_time",
+      "exports": ["nowMadrid", "nowISO", "todayMadrid", "todayISO", "formatDate", "formatTime", "parseEsiosDate", "parseEsiosDatetime", "parseDate", "parseTime", "isBusinessDay"],
+      "category": "infra"
+    },
+    {
+      "id": "Adela_env",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Carga y validación de variables de entorno",
+      "tests": 8,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_env",
+      "exports": ["loadEnv", "loadEnvSync", "getEnv", "isPort", "isPath", "isUrl", "isEmail"],
+      "category": "infra"
+    },
+    {
+      "id": "Adela_http",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Cliente HTTP genérico con reintentos, backoff exponencial, jitter y timeout",
+      "tests": 20,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_http",
+      "exports": ["createClient", "batchRequests"],
+      "category": "infra"
+    },
+    {
+      "id": "Adela_cache",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Caché dual (memoria + disco) con métricas de uso",
+      "tests": 35,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_cache",
+      "exports": ["createCache"],
+      "category": "infra"
+    },
+    {
+      "id": "Adela_health",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Health checks estandarizados con router Express",
+      "tests": 30,
+      "runtimeDeps": [],
+      "dependsOn": ["Adela_time"],
+      "github": "https://github.com/Ntizar/Adela_health",
+      "exports": ["createHealthRouter", "createHealthCheck", "HealthStatus"],
+      "category": "core"
+    },
+    {
+      "id": "Adela_auth",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Autenticación con PIN numérico + JWT + sesiones Express + rate limiting + multi-tenant",
+      "tests": 46,
+      "runtimeDeps": ["bcryptjs", "jsonwebtoken", "sql.js"],
+      "dependsOn": ["Adela_db"],
+      "github": "https://github.com/Ntizar/Adela_auth",
+      "exports": ["createAuth", "authRouter", "requireAuth", "optionalAuth"],
+      "category": "core"
+    },
+    {
+      "id": "Adela_export",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Exportación multi-formato: CSV, JSON, PDF",
+      "tests": 38,
+      "runtimeDeps": ["csv-parse", "csv-stringify", "pdfkit"],
+      "dependsOn": ["Adela_time"],
+      "github": "https://github.com/Ntizar/Adela_export",
+      "exports": ["csvParse", "csvStringify", "csvLoad", "csvSave", "csvAppend", "jsonPretty", "jsonSave", "jsonLoad", "pdfGenerate"],
+      "category": "export"
+    },
+    {
+      "id": "Adela_ai",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Proxy genérico para APIs de LLM (NaN.builders, OpenRouter, OpenAI)",
+      "tests": 21,
+      "runtimeDeps": [],
+      "dependsOn": ["Adela_env"],
+      "github": "https://github.com/Ntizar/Adela_ai",
+      "exports": ["createLlmClient", "PromptBuilder"],
+      "category": "core"
+    },
+    {
+      "id": "Adela_db",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Abstracción de base de datos intercambiable con migraciones versionadas",
+      "tests": 17,
+      "runtimeDeps": ["sql.js"],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_db",
+      "exports": ["Database", "createDatabase", "SqliteAdapter", "createSqliteAdapter", "MigrationsRunner", "createMigrationsRunner"],
+      "category": "infra"
+    },
+    {
+      "id": "Adela_i18n",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Internacionalización con locales JSON, placeholders y formatos Intl",
+      "tests": 38,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_i18n",
+      "exports": ["createI18n", "t", "setLocale", "getLocale", "addMessages", "formatNumber", "formatDate", "formatCurrency"],
+      "category": "presentation"
+    }
+  ],
+  "categories": {
+    "infra": "Capa base — sin dependencias de otros Adela",
+    "core": "Capa funcional — depende de infra",
+    "export": "Capa de exportación — depende de core + infra",
+    "presentation": "Capa de presentación — depende de infra"
+  }
+}

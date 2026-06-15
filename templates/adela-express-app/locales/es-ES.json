@@ -1,0 +1,43 @@
+{
+  "comunes": {
+    "guardar": "Guardar",
+    "cancelar": "Cancelar",
+    "eliminar": "Eliminar",
+    "editar": "Editar",
+    "crear": "Crear",
+    "buscar": "Buscar",
+    "cerrar": "Cerrar",
+    "volver": "Volver",
+    "aceptar": "Aceptar",
+    "rechazar": "Rechazar",
+    "cargando": "Cargando...",
+    "sinDatos": "No hay datos disponibles",
+    "error": "Ha ocurrido un error"
+  },
+  "autenticacion": {
+    "iniciarSesion": "Iniciar sesión",
+    "cerrarSesion": "Cerrar sesión",
+    "usuario": "Usuario",
+    "contraseña": "Contraseña",
+    "olvideContraseña": "Olvidé mi contraseña",
+    "registrarse": "Registrarse",
+    "credencialesInvalidas": "Credenciales inválidas",
+    "sesionExpirada": "La sesión ha expirado",
+    "tokenInvalido": "Token de autenticación inválido"
+  },
+  "api": {
+    "noEncontrado": "Ruta no encontrada",
+    "metodoNoPermitido": "Método no permitido",
+    "errorInterno": "Error interno del servidor",
+    "parametroInvalido": "Parámetro inválido",
+    "recursoCreado": "Recurso creado correctamente",
+    "recursoActualizado": "Recurso actualizado correctamente",
+    "recursoEliminado": "Recurso eliminado correctamente"
+  },
+  "salud": {
+    "aplicacionSaludable": "La aplicación está funcionando correctamente",
+    "baseDeDatosConectada": "Base de datos conectada",
+    "baseDeDatosDesconectada": "Base de datos desconectada",
+    "listo": "Aplicación lista para recibir tráfico"
+  }
+}

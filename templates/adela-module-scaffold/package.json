@@ -1,0 +1,20 @@
+{
+  "name": "adela-{{MODULE_NAME_LOWERCASE}}",
+  "version": "1.0.0",
+  "description": "{{MODULE_DESCRIPTION}}",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["adela", "{{MODULE_NAME_LOWERCASE}}"],
+  "license": "MIT",
+  "files": ["dist/"],
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
