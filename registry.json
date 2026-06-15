@@ -162,6 +162,66 @@
       "github": "https://github.com/Ntizar/Adela_api",
       "exports": ["createApiHelpers", "paginate", "filter", "sort", "PaginationOptions", "PaginatedResult", "FilterOptions", "FilterCondition", "SortOptions", "SortOption", "ApiResponse", "ApiError"],
       "category": "api-layer"
+    },
+    {
+      "id": "Adela_metrics",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Métricas HTTP y custom — contadores, histogramas, gauge, middleware Express, formato Prometheus-compatible",
+      "tests": 18,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_metrics",
+      "exports": ["createMetrics", "toPrometheusFormat", "toPrometheusJSON", "Metrics", "MetricsConfig", "Counter", "Histogram", "Gauge", "HistogramStats", "MetricsSnapshot"],
+      "category": "observabilidad"
+    },
+    {
+      "id": "Adela_jobs",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Cola de trabajos con BullMQ + Redis — retry automático, concurrency control, job status tracking y scheduler",
+      "tests": 27,
+      "runtimeDeps": ["bullmq", "ioredis"],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_jobs",
+      "exports": ["createJobQueue", "createWorker", "createScheduler", "JobStatus", "mapBullStatus"],
+      "category": "escalabilidad"
+    },
+    {
+      "id": "Adela_ws",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Servidor WebSocket con Express — rooms, broadcast, heartbeat, middleware de upgrade",
+      "tests": 23,
+      "runtimeDeps": ["ws"],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_ws",
+      "exports": ["createWsServer", "WsConfig", "WsServer", "WsMessage", "WsState", "ClientInfo", "Room"],
+      "category": "core"
+    },
+    {
+      "id": "Adela_cli",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "CLI de scaffolding para el ecosistema Adela — crea proyectos, añade módulos y corre tests",
+      "tests": 35,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_cli",
+      "exports": ["createCli", "parseArgs"],
+      "category": "presentation"
+    },
+    {
+      "id": "Adela_search",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Motor de búsqueda full-text in-memory con tokenización, stemming, fuzzy matching (Levenshtein), highlight y facets",
+      "tests": 77,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_search",
+      "exports": ["createSearchEngine", "tokenizar", "stemmingBasico", "extraerFragmento", "resaltarCoincidencias", "levenshtein", "similitud", "sugerencias", "coincideParcial"],
+      "category": "core"
     }
   ],
   "categories": {
@@ -169,6 +229,8 @@
     "core": "Capa funcional — depende de infra",
     "export": "Capa de exportación — depende de core + infra",
     "presentation": "Capa de presentación — depende de core + infra",
-    "api-layer": "Capa de API — helpers REST reutilizables"
+    "api-layer": "Capa de API — helpers REST reutilizables",
+    "observabilidad": "Capa de observabilidad — métricas y logging",
+    "escalabilidad": "Capa de escalabilidad — colas, caché, base de datos"
   }
 }
