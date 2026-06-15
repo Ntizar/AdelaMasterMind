@@ -5,7 +5,8 @@
 ```
   Capa Presentación
   ┌─────────────────────────────────────────────────────┐
-  │  Adela_i18n     Adela_forms*    Adela_admin*        │
+  │  Adela_i18n     Adela_forms*    Adela_admin ───→→→ │
+  │       ↑                                  tracking  │
   └──────────┬──────────────────────────────────────────┘
              │ depende de
   Capa Core ─┼──────────────────────────────────────────┐
