@@ -3,7 +3,7 @@
 > **Actualizado:** 14 Jun 2026
 > **Estado:** 10/10 módulos base completados 🎉
 
-## ✅ Completado (v1.0.0)
+## ✅ Completado (v1.1.0)
 
 ### Fase 1 — P0 (Infraestructura base)
 - [x] **Adela_time** — Timezone Madrid + parseo
@@ -23,35 +23,41 @@
 ### Fase 4 — P3 (Internacionalización)
 - [x] **Adela_i18n** — Locales + formatos Intl
 
-## 🔜 Siguiente (v1.1.0)
+### Fase 5 — Admin y Meta
+- [x] **Adela_admin** — Panel admin universal con tracking de visitas y dashboard
+- [x] **AdelaMasterMind** — Meta-repositorio con registry + skills + templates
 
-### AdelaMasterMind
-- [ ] **AdelaMasterMind** — Meta-repositorio (este roadmap 😄)
-- [ ] Skills Hermes Agent para trabajar con Adela
-- [ ] Template de proyecto Express con Adela pre-integrado
+## 🔜 Siguiente (v1.2.0)
 
-### Adela_admin — Panel de control universal
-- [ ] Middleware de tracking de visitas
-- [ ] Dashboard de métricas (hoy, semana, mes)
-- [ ] Integración con Adela_auth para login
-- [ ] Frontend vanilla embebido en HTML
+### Adela_config — Configuración centralizada
+- [ ] Config en JSON/YAML con validación
+- [ ] Merge con .env automático
+- [ ] Schemas tipados
 
-## 🧩 Planificación media (v1.2.0)
+### Adela_log — Logging estructurado
+- [ ] Niveles: debug, info, warn, error
+- [ ] Salida a consola + archivo con rotación
+- [ ] Formato JSON para producción
+
+### Adela_events — Sistema pub/sub en memoria
+- [ ] Desacoplar módulos mediante eventos
+- [ ] Suscripciones con filtro por tipo
+- [ ] Útil para notificar cambios entre módulos
+
+## 🧩 Planificación media (v1.3.0)
 
 | Módulo | Descripción | Prioridad |
 |--------|-------------|-----------|
-| **Adela_config** | Config centralizada JSON/YAML + .env | Alta |
-| **Adela_log** | Logging estructurado con niveles y rotación | Alta |
-| **Adela_events** | Pub/sub en memoria para desacoplar módulos | Media |
 | **Adela_queue** | Cola de trabajos (email, export, cleanup) | Media |
 | **Adela_email** | Envío de emails con templates HTML | Media |
+| **Adela_upload** | Subida de archivos con validación | Baja |
+| **Adela_forms** | Generación + validación de formularios | Baja |
 
 ## 🌌 Visión lejana (v2.0.0)
 
 | Módulo | Descripción |
 |--------|-------------|
-| **Adela_upload** | Subida de archivos con validación |
-| **Adela_forms** | Generación + validación de formularios |
-| **Adela_admin** | Panel admin completo con CRUD genérico |
 | **Adela_cli** | CLI para scaffolding de proyectos Adela |
 | **Adela_web** | Meta-framework para webs modulares con Adela |
+| **CI/CD** | GitHub Actions para tests + publish automático |
+| **NPM publish** | Publicar todos los módulos en npm |
