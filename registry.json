@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Adela Ecosystem",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "updated": "2026-06-14",
     "author": "David Antizar (Ntizar)",
     "description": "Registro central del ecosistema Adela — fuente de verdad para LLMs y herramientas"
@@ -116,6 +116,18 @@
       "category": "infra"
     },
     {
+      "id": "Adela_admin",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Panel de administración universal con tracking de visitas y dashboard de métricas embebido",
+      "tests": 26,
+      "runtimeDeps": [],
+      "dependsOn": ["Adela_auth", "Adela_db"],
+      "github": "https://github.com/Ntizar/Adela_admin",
+      "exports": ["createAdminPanel", "AdminPanel", "AdminConfig", "DashboardStats", "VisitRecord"],
+      "category": "presentation"
+    },
+    {
       "id": "Adela_i18n",
       "version": "1.0.0",
       "status": "stable",
@@ -132,6 +144,6 @@
     "infra": "Capa base — sin dependencias de otros Adela",
     "core": "Capa funcional — depende de infra",
     "export": "Capa de exportación — depende de core + infra",
-    "presentation": "Capa de presentación — depende de infra"
+    "presentation": "Capa de presentación — depende de core + infra"
   }
 }
