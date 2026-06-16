@@ -208,7 +208,7 @@
       "runtimeDeps": [],
       "dependsOn": [],
       "github": "https://github.com/Ntizar/Adela_cli",
-      "exports": ["createCli", "parseArgs"],
+      "exports": ["createCli", "parseArgs", "Cli", "CliConfig", "Command", "CommandName", "CommandResult", "ParsedArgs", "ProjectTemplate", "TemplateContext"],
       "category": "presentation"
     },
     {
@@ -222,6 +222,18 @@
       "github": "https://github.com/Ntizar/Adela_search",
       "exports": ["createSearchEngine", "tokenizar", "stemmingBasico", "extraerFragmento", "resaltarCoincidencias", "levenshtein", "similitud", "sugerencias", "coincideParcial"],
       "category": "core"
+    },
+    {
+      "id": "Adela_files",
+      "version": "1.0.0",
+      "status": "stable",
+      "description": "Gestión de archivos — upload multipart, validación MIME, almacenamiento en disco, thumbnails de imágenes",
+      "tests": 34,
+      "runtimeDeps": [],
+      "dependsOn": [],
+      "github": "https://github.com/Ntizar/Adela_files",
+      "exports": ["createFiles", "isMimeValid", "isSizeValid", "isFileNameValid", "extractExtension", "categoryFromExtension", "generateFileName", "DEFAULT_MIME_CATEGORIES"],
+      "category": "infra"
     }
   ],
   "categories": {
